@@ -23,7 +23,6 @@ ota:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-  use_address: 192.168.103.170
   min_auth_mode: WPA2
 
 time:
@@ -42,9 +41,12 @@ light:
     restore_mode: RESTORE_DEFAULT_OFF
 
 external_components:
-  - source: 
-      type: local
-      path: components
+  # - source: 
+  #     type: local
+  #     path: components
+  - source: github://mplogas/word-oclock-esphome@main
+    components: [ wordclock ]
+
 
 wordclock:
   id: word_clock_display
